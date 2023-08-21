@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "img": "assets/images/collection/ListImg1.png ",
+    "title": "Syltherine",
+    "description": "Stylish cafe chair",
+    "new price": "Rp 2.500.000",
+    "old price": "Rp 3.500.000",
+    "discount": "-30%",
+    "new item": false
+  },
+  {
+    "id": "2",
+    "img": "assets/images/collection/ListImg2.png",
+    "title": "Leviosa",
+    "description": "Stylish cafe chair",
+    "new price": "",
+    "old price": "Rp 2.500.000",
+    "discount": "",
+    "new item": false
+  },
+  {
+    "id": "3",
+    "img": "assets/images/collection/ListImg3.png",
+    "title": "Lolito",
+    "description": "Luxury big sofa",
+    "new price": "Rp 7.000.000",
+    "old price": "Rp 14.000.000",
+    "discount": "-50%",
+    "new item": false
+  },
+  {
+    "id": "4",
+    "img": "assets/images/collection/ListImg4.png",
+    "title": "Respira",
+    "description": "Minimalist fan",
+    "new price": "",
+    "old price": "Rp 500.000",
+    "discount": "",
+    "new item": true
+  },
+  {
+    "id": "5",
+    "img": "assets/images/collection/ListImg5.png",
+    "title": "Grifo",
+    "description": "Night lamp",
+    "new price": "",
+    "old price": "Rp 1.500.000",
+    "discount": "",
+    "new item": false
+  },
+  {
+    "id": "6",
+    "img": "assets/images/collection/ListImg6.png",
+    "title": "Muggo",
+    "description": "Small mug",                                                                                                                                                                                                                 ````````````````````````````````````````````````````````````
+    "new price": "",
+    "old price": "Rp 150.000",
+    "discount": "",
+    "new item": true
+  },
+  {
+    "id": "7",
+    "img": "assets/images/collection/ListImg7.png",
+    "title": "Pingky",
+    "description": "Cute bed set",
+    "new price": "Rp 7.000.000",
+    "old price": "Rp 14.000.000",
+    "discount": "-50%",
+    "new item": false
+  },
+  {
+    "id": "8",
+    "img": "assets/images/collection/ListImg8.png",
+    "title": "Potty",
+    "description": "Minimalist flower pot",
+    "new price": "",
+    "old price": "Rp 500.000",
+    "discount": "",
+    "new item": true
+  }
+]

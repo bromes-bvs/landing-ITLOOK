@@ -1,33 +1,53 @@
 import React from 'react';
 
+import { ReactComponent as Search } from '../../assets/logo/Search.svg';
+import { ReactComponent as ArrowBottom } from '../../assets/logo/ArrowBottom.svg';
+import { ReactComponent as Like } from '../../assets/logo/Heart.svg';
+import { ReactComponent as Cart } from '../../assets/logo/Cart.svg';
+
+import profileImg from '../../assets/images/profile.png';
+
 const Header = () => {
   return (
-    <header className="page-header">
-      <nav className="main-nav">
-        <a className="logo link logo--main-nav" href="./index.html">
-          Funiro.
-        </a>
-        <ul className="list main-nav__list">
-          <li className="main-nav__item main-nav__item--current">
-            <a href="/">Products</a>
-          </li>
-          <li className="main-nav__item">
-            <a href="/">Rooms</a>
-          </li>
-          <li className="main-nav__item">
-            <a href="/">Inspirations</a>
-          </li>
-        </ul>
-      </nav>
-      <input type="text" className="serch" />
-      <div className="profile">
-        <button type="button" className="profile__like"></button>
-        <a href="/" className="profile__cart">
-          Cart
-        </a>
-        <a href="/" className="profile__cart">
-          Photo
-        </a>
+    <header className="header">
+      <div className="container">
+        <div>
+          <nav className="main-nav">
+            <a className="main-nav__logo" href="./index.html">
+              Funiro.
+            </a>
+            <ul className="main-nav__list">
+              <li className="main-nav__item">
+                Products <ArrowBottom />
+              </li>
+              <li className="main-nav__item">
+                Rooms <ArrowBottom />
+              </li>
+              <li className="main-nav__item">
+                <a href="/">Inspirations</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="search-wrapper">
+            <input
+              type="text"
+              className="search"
+              placeholder="Search for minimalist chair"
+            />
+            <Search className="search__icon" />
+          </div>
+        </div>
+        <div className="profile">
+          <button type="button" className="profile__like">
+            <Like />
+          </button>
+          <a href="/" className="profile__cart">
+            <Cart />
+          </a>
+          <a href="/" className="profile__cart">
+            <img src={profileImg} alt="Profile" />
+          </a>
+        </div>
       </div>
     </header>
   );
