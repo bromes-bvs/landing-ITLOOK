@@ -12,6 +12,16 @@ import tipsImg1 from '../../assets/images/Tips1.png';
 import tipsImg2 from '../../assets/images/Tips2.png';
 import tipsImg3 from '../../assets/images/Tips3.png';
 
+import Share1 from '../../assets/images/Share1.png';
+import Share2 from '../../assets/images/Share2.png';
+import Share3 from '../../assets/images/Share3.png';
+import Share4 from '../../assets/images/Share4.png';
+import Share5 from '../../assets/images/Share5.png';
+import Share6 from '../../assets/images/Share6.png';
+import Share7 from '../../assets/images/Share7.png';
+import Share8 from '../../assets/images/Share8.png';
+import Share9 from '../../assets/images/Share9.png';
+
 import { ReactComponent as ArrowLeftMore } from '../../assets/logo/ArrowRightBlack.svg';
 import { ReactComponent as Trophy } from '../../assets/logo/Trophy.svg';
 import { ReactComponent as Accept } from '../../assets/logo/Accept.svg';
@@ -20,6 +30,8 @@ import { ReactComponent as Support } from '../../assets/logo/Support.svg';
 import { ReactComponent as ArrowRight } from '../../assets/logo/Arrow.svg';
 import { ReactComponent as ArrowLeft } from '../../assets/logo/ArrowLeftCircle.svg';
 import { ReactComponent as Divider } from '../../assets/logo/Divider.svg';
+import { ReactComponent as ArrowLeftCircle } from '../../assets/logo/ArrowLeft.svg';
+import { ReactComponent as ArrowRightCircle } from '../../assets/logo/ArrowRight.svg';
 
 const Main = () => {
   // const [index, setIndex] = useState('01');
@@ -37,16 +49,14 @@ const Main = () => {
     <main>
       <section className="hero container">
         <div className="hero__title-wrapper ">
-          <h1 data-speed="1.2" className="hero__title">
-            High-Quality Furniture Just For You
-          </h1>
+          <h1 className="hero__title">High-Quality Furniture Just For You</h1>
           <p className="hero__prescription">
             Our furniture is made from selected and best quality materials that
             are suitable for your dream home
           </p>
           <button type="button">Shop Now</button>
         </div>
-        <div data-speed="0.9" className="hero__slider-wrapper">
+        <div className="hero__slider-wrapper">
           <img
             className="hero__slider__img"
             src={topSliderImg2}
@@ -62,18 +72,20 @@ const Main = () => {
             src={topSliderImg3}
             alt="Furniture"
           />
-          {/* <img className="hero__img" src="" alt="Build" /> */}
-
           <div className="hero__slider__state-wrapper">
-            <div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <div className="hero__dots radio">
+              <span className="hero__dot current"></span>
+              <span className="hero__dot"></span>
+              <span className="hero__dot"></span>
+              <span className="hero__dot"></span>
             </div>
             <div>
-              <button type="button"></button>
-              <button type="button"></button>
+              <button type="button">
+                <ArrowLeftCircle />
+              </button>
+              <button type="button">
+                <ArrowRightCircle />
+              </button>
             </div>
           </div>
         </div>
@@ -263,34 +275,34 @@ const Main = () => {
           <ArrowRight />
         </button>
       </section>
-      <section className="share section">
+      <section className="share">
         <div className="share__header-wrapper">
-          <p className="share__description"></p>
+          <p className="share__description">Share your setup with</p>
           <h3 className="share__title">#FuniroFurniture</h3>
         </div>
         <div className="share__content-wrapper">
           <div className="content__left-wrp">
             <div>
-              <img src="" alt="" />
-              <img src="" alt="" />
+              <img src={Share1} alt="Example" />
+              <img src={Share2} alt="Example" />
             </div>
             <div>
-              <img src="" alt="" />
-              <img src="" alt="" />
+              <img src={Share6} alt="Example" />
+              <img src={Share7} alt="Example" />
             </div>
           </div>
           <div className="content__right-wrp">
             <div>
-              <img src="" alt="" />
+              <img src={Share3} alt="Example" />
             </div>
             <div>
               <div>
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src={Share4} alt="Example" />
+                <img src={Share5} alt="Example" />
               </div>
               <div>
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src={Share8} alt="Example" />
+                <img src={Share9} alt="Example" />
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "img": "/collection/ListImg1.png",
+    "img": "/landing-ITLOOK/collection/ListImg1.png",
     "title": "Syltherine",
     "description": "Stylish cafe chair",
     "newPrice": "Rp 2.500.000",
@@ -11,7 +11,7 @@
   },
   {
     "id": "2",
-    "img": "/collection/ListImg2.png",
+    "img": "/landing-ITLOOK/collection/ListImg2.png",
     "title": "Leviosa",
     "description": "Stylish cafe chair",
     "newPrice": "",
@@ -21,7 +21,7 @@
   },
   {
     "id": "3",
-    "img": "/collection/ListImg3.png",
+    "img": "/landing-ITLOOK/collection/ListImg3.png",
     "title": "Lolito",
     "description": "Luxury big sofa",
     "newPrice": "Rp 7.000.000",
@@ -31,7 +31,7 @@
   },
   {
     "id": "4",
-    "img": "/collection/ListImg4.png",
+    "img": "/landing-ITLOOK/collection/ListImg4.png",
     "title": "Respira",
     "description": "Minimalist fan",
     "newPrice": "",
@@ -41,7 +41,7 @@
   },
   {
     "id": "5",
-    "img": "/collection/ListImg5.png",
+    "img": "/landing-ITLOOK/collection/ListImg5.png",
     "title": "Grifo",
     "description": "Night lamp",
     "newPrice": "",
@@ -51,7 +51,7 @@
   },
   {
     "id": "6",
-    "img": "/collection/ListImg6.png",
+    "img": "/landing-ITLOOK/collection/ListImg6.png",
     "title": "Muggo",
     "description": "Small mug",
     "newPrice": "",
@@ -61,7 +61,7 @@
   },
   {
     "id": "7",
-    "img": "/collection/ListImg7.png",
+    "img": "/landing-ITLOOK/collection/ListImg7.png",
     "title": "Pingky",
     "description": "Cute bed set",
     "newPrice": "Rp 7.000.000",
@@ -71,7 +71,7 @@
   },
   {
     "id": "8",
-    "img": "/collection/ListImg8.png",
+    "img": "/landing-ITLOOK/collection/ListImg8.png",
     "title": "Potty",
     "description": "Minimalist flower pot",
     "newPrice": "",

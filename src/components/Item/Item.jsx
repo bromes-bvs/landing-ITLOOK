@@ -10,7 +10,12 @@ export const Item = ({ img, title, desc, oldP, newP, discount, newItem }) => {
       <div className="list__item-wrapper">
         <h4 className="list__item__h">{title}</h4>
         <p className="list__item__p">{desc}</p>
-        <p className="list__item__cost">{newP === '' ? oldP : newP}</p>
+        <div>
+          <p className="list__item__cost">{newP === '' ? oldP : newP}</p>
+          {newP !== '' && oldP && (
+            <p className="list__item__cost--old">{oldP}</p>
+          )}
+        </div>
       </div>
       <span
         className={`list__item__discount ${
