@@ -23,12 +23,14 @@ $bcg-secondary-color: #fcf8f3;
 $accent-color: #e89f71;
 $border-color: #f2f2f2;
 $input-color: #828282;
+$card-bcg-color: #f4f5f7;
 $white: #fff;
 $black: #000;
 $secondary-white: #fbfbfb;
 $footer-color: #2c2c2c;
 $salary-green: #2ec1ac;
 $salary-red: #e97171;
+$dots-color: #d8d8d8;
 $text-size: 16px;
 
 * {
@@ -63,6 +65,19 @@ p {
   font-family: Gilroy-M;
   font-size: $text-size;
   color: $secondary-text-color;
+  line-height: 150%;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  cursor: pointer;
 }
 
 .content,
@@ -77,29 +92,55 @@ p {
   will-change: transform;
 }
 
-button {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  font-family: TT Hoves-R;
-  font-size: 12px;
-  line-height: 1.8;
-  letter-spacing: 2.4px;
-  cursor: pointer;
-}
-
 .container {
   padding: 0 100px;
-  // max-width: 1170px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
-// .section {
-//   padding: 40px 0 56px;
-// }
+.btn-view {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  text-align: center;
+  font-family: Gilroy-S;
+  line-height: 150%;
+  font-size: 16px;
+  transition: all 0.4s ease-in-out;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 27.22px;
+  transition: all 0.4s ease-in-out;
+
+  & span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: $dots-color;
+  }
+
+  & span.current {
+    background-color: $accent-color;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      border: 1px solid $accent-color;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
 
 .header .container {
   display: flex;
@@ -326,5 +367,341 @@ button {
   &__info-wrapper {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 44px;
+
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__list-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 32px;
+    width: 100%;
+
+    & .list__item {
+      background-color: $card-bcg-color;
+      position: relative;
+      overflow: hidden;
+
+      &:hover > .item__overlay {
+        transform: translateY(-100%);
+      }
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 16px 30px 16px;
+      }
+
+      &__img {
+        width: 100%;
+      }
+
+      &__h {
+        font-size: 24px;
+        font-family: Gilroy-S;
+      }
+
+      &__cost {
+        font-size: 20px;
+        font-family: Gilroy-S;
+        color: $main-text-color;
+      }
+
+      &__discount {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        top: 24px;
+        right: 24px;
+        border-radius: 50%;
+        color: $white;
+        font-size: 16px;
+        font-family: Gilroy-M;
+
+        &--hidden {
+          display: none;
+        }
+        &--red {
+          background-color: $salary-red;
+        }
+        &--green {
+          background-color: $salary-green;
+        }
+      }
+
+      & .item__overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin: 0;
+        padding: 0 42px;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        background-color: rgba(58, 58, 58, 0.72);
+        color: $white;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &__btn {
+          background-color: $white;
+          height: auto;
+          color: $accent-color;
+          transition: all 0.4s ease-in-out;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &__link {
+          display: flex;
+          align-items: center;
+          font-family: Gilroy-S;
+          font-size: 16px;
+          line-height: 150%;
+          color: $white;
+          transition: all 0.4s ease-in-out;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        & div {
+          display: flex;
+          justify-content: space-evenly;
+          width: 100%;
+
+          & svg path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &__more-btn {
+    width: 245px;
+    border: 1px solid $accent-color;
+    background-color: transparent;
+    color: $accent-color;
+
+    &:hover {
+      background-color: $bcg-secondary-color;
+    }
+  }
+}
+
+.inspiration {
+  display: flex;
+  background-color: $bcg-secondary-color;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  margin-bottom: 44px;
+  overflow: hidden;
+  position: relative;
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 378px;
+    flex-shrink: 0;
+    margin-right: 86px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    color: $third-text-color;
+    margin-bottom: 24px;
+  }
+
+  &__btn-more {
+    color: $white;
+    width: 176px;
+    background-color: $accent-color;
+    height: auto;
+  }
+
+  &__slider {
+    position: relative;
+    display: flex;
+
+    & div {
+      display: flex;
+      gap: 24px;
+    }
+
+    &__h {
+      font-family: Gilroy-S;
+      font-size: 28px;
+    }
+
+    &__p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $third-text-color;
+    }
+
+    &__btn-next {
+      position: absolute;
+      top: 50%;
+      right: 55px;
+      transform: translateY(-50%);
+
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: $white;
+      transition: all 0.3s ease-in;
+      filter: drop-shadow(0 7px 2mm rgba(0, 0, 0, 0.1));
+
+      &:hover {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+          rgba(17, 17, 26, 0.1) 0px 8px 24px,
+          rgba(17, 17, 26, 0.1) 0px 16px 56px;
+      }
+    }
+
+    &__btn-more {
+      position: absolute;
+      bottom: 0;
+      right: -48px;
+      width: 48px;
+      height: 48px;
+      background-color: $accent-color;
+      transition: all 0.3s ease-in;
+
+      & svg path {
+        fill: $white;
+      }
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    &__btn-wrapper {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      padding: 32px;
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      display: flex;
+      flex-direction: column;
+
+      & div {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+
+  &__img.shrink {
+    height: 83.5%;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 29px;
+    left: 36.5%;
+  }
+}
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__slider__switch-btn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $white;
+    transition: all 0.3s ease-in;
+    filter: drop-shadow(0 7px 2mm rgba(0, 0, 0, 0.1));
+
+    &.left {
+      top: 50%;
+      left: 78px;
+      transform: translateY(-50%);
+    }
+    &.right {
+      top: 50%;
+      right: 78px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+      box-shadow: rgba(97, 97, 97, 0.1) 0px 5px 55px,
+        rgba(97, 97, 97, 0.1) 0px -15px 70px;
+      margin-bottom: 44px;
+    }
+  }
+
+  &__card-bottom-wrapper {
+    padding: 12px;
+  }
+
+  &__card__p {
+    font-family: Gilroy-S;
+    font-size: 24px;
+    line-height: 120%;
+    color: $main-text-color;
+    margin-bottom: 8px;
+  }
+
+  &__card__date {
+    font-family: Gilroy-R;
+    font-size: 14px;
   }
 }

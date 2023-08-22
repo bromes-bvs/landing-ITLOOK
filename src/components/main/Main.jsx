@@ -1,24 +1,25 @@
 import React from 'react';
+import collection from '../../data/products.json';
+import { Item } from '../Item/Item';
 
 import topSliderImg1 from '../../assets/images/Images 1.png';
 import topSliderImg2 from '../../assets/images/Images 2.png';
 import topSliderImg3 from '../../assets/images/Images 3.png';
-// import detailImg1 from '../../assets/images/Rectangle 2.png';
-// import detailImg2 from '../../assets/images/Rectangle 3.png';
-// import aboutImg3 from '../../assets/images/Rectangle 4.png';
-// import numberOne from '../../assets/images/number_1.png';
-// import numberTwo from '../../assets/images/number_2.png';
-// import projectImg1 from '../../assets/images/image 1.png';
-// import projectImg2 from '../../assets/images/image 2.png';
-// import projectImg3 from '../../assets/images/image 3.png';
-// import projectImg4 from '../../assets/images/image 4.png';
-// import contsctImg from '../../assets/images/ContactUs.png';
+import inspireImg1 from '../../assets/images/Inspiration1.png';
+import inspireImg2 from '../../assets/images/Inspiration2.png';
+import inspireImg3 from '../../assets/images/Inspiration3.png';
+import tipsImg1 from '../../assets/images/Tips1.png';
+import tipsImg2 from '../../assets/images/Tips2.png';
+import tipsImg3 from '../../assets/images/Tips3.png';
 
 import { ReactComponent as ArrowLeftMore } from '../../assets/logo/ArrowRightBlack.svg';
 import { ReactComponent as Trophy } from '../../assets/logo/Trophy.svg';
 import { ReactComponent as Accept } from '../../assets/logo/Accept.svg';
 import { ReactComponent as Shopping } from '../../assets/logo/Shopping.svg';
 import { ReactComponent as Support } from '../../assets/logo/Support.svg';
+import { ReactComponent as ArrowRight } from '../../assets/logo/Arrow.svg';
+import { ReactComponent as ArrowLeft } from '../../assets/logo/ArrowLeftCircle.svg';
+import { ReactComponent as Divider } from '../../assets/logo/Divider.svg';
 
 const Main = () => {
   // const [index, setIndex] = useState('01');
@@ -117,24 +118,43 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className="products section">
+      <section className="products container">
         <h2 className="products__title">Our Products</h2>
         <div className="products__list-wrapper">
           <ul className="products__list">
-            <li className="products__list__item">
-              <img src="" alt="" className="poructs__list__img" />
-              <div className="products__list__item-wrp">
-                <h4 className="prescription__h">Bohauss</h4>
-                <p className="prescription__p">Luxury big sofa 2-seat</p>
-                <p className="prescription__cost"></p>
-              </div>
-            </li>
+            {collection.map(
+              ({
+                id,
+                img,
+                title,
+                description,
+                newPrice,
+                oldPrice,
+                discount,
+                newItem,
+              }) => {
+                return (
+                  <Item
+                    key={id}
+                    img={img}
+                    title={title}
+                    desc={description}
+                    oldP={oldPrice}
+                    newP={newPrice}
+                    discount={discount}
+                    newItem={newItem}
+                  />
+                );
+              }
+            )}
           </ul>
-          <button type="button" className="products__more-btn"></button>
+          <button type="button" className="products__more-btn btn-view">
+            Show More
+          </button>
         </div>
       </section>
-      <section className="inspiration section">
-        <div>
+      <section className="inspiration container">
+        <div className="inspiration__title-wrapper">
           <h2 className="inspiration__title">
             50+ Beautiful rooms inspiration
           </h2>
@@ -142,74 +162,106 @@ const Main = () => {
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you
           </p>
-          <button type="button" className="inspiration__btn-more">
+          <button type="button" className="inspiration__btn-more btn-view">
             Explore More
           </button>
         </div>
-        <div className="inspiration__slider-wrapper">
+        <div className="inspiration__slider">
           <div>
             <img
-              className="inspiration__img scroll-left"
-              src=""
-              alt="Leisure center"
+              className="inspiration__img"
+              src={inspireImg1}
+              alt="Room view"
             />
             <img
-              className="inspiration__img scroll-center"
-              src=""
-              alt="Leisure center"
+              className="inspiration__img shrink"
+              src={inspireImg2}
+              alt="Room view"
             />
             <img
-              className="inspiration__img scroll-right"
-              src=""
-              alt="Leisure center"
+              className="inspiration__img shrink"
+              src={inspireImg3}
+              alt="Room view"
             />
+            <div className="inspiration__dots radio">
+              <span className="inspiration__dot current"></span>
+              <span className="inspiration__dot"></span>
+              <span className="inspiration__dot"></span>
+              <span className="inspiration__dot"></span>
+            </div>
+          </div>
+          <div className="inspiration__slider__btn-wrapper">
+            <div>
+              <p className="inspiration__slider__p">
+                01 <Divider /> Bed Room
+              </p>
+              <h5 className="inspiration__slider__h">Inner Peace</h5>
+              <button type="button" className="inspiration__slider__btn-more">
+                <ArrowLeftMore />
+              </button>
+            </div>
           </div>
         </div>
-        <div className="inspiration__slider__btn-wrapper">
-          <div>
-            <p className="inspiration__slider__p">
-              01 <span></span> Bed Room
-            </p>
-            <h5 className="inspiration__slider__h">Inner Peace</h5>
-          </div>
-          <button
-            type="button"
-            className="inspiration__slider__btn-next"
-          ></button>
-        </div>
+        <button type="button" className="inspiration__slider__btn-next">
+          <ArrowRight />
+        </button>
       </section>
-      <section className="tips section">
+      <section className="tips container">
         <h2 className="tips__title">Tips & Tricks</h2>
         <div className="tips__content-wrapper">
-          <div className="tips___card-wrapper">
-            <img className="tips___card__img" src="" alt="" />
-            <p className="tips__card_p">How to create a living room to love</p>
-            <h5 className="tips__card__date">20 jan 2020</h5>
+          <div className="tips__card-wrapper">
+            <img className="tips__card__img" src={tipsImg1} alt="Create" />
+            <div className="tips__card-bottom-wrapper">
+              <p className="tips__card__p">
+                How to create a living room to love
+              </p>
+              <p className="tips__card__date">20 jan 2020</p>
+            </div>
           </div>
-          <div className="tips___card-wrapper">
-            <img className="tips___card__img" src="" alt="" />
-            <p className="tips__card_p">
-              Solution for clean look working space
-            </p>
-            <h5 className="tips__card__date">10 jan 2020</h5>
+          <div className="tips__card-wrapper active">
+            <img className="tips__card__img" src={tipsImg2} alt="Solution" />
+            <div className="tips__card-bottom-wrapper">
+              <p className="tips__card__p">
+                Solution for clean look working space
+              </p>
+              <p className="tips__card__date">10 jan 2020</p>
+            </div>
           </div>
-          <div className="tips___card-wrapper">
-            <img className="tips___card__img" src="" alt="" />
-            <p className="tips__card_p">
-              Make your cooking activity more fun with good setup
-            </p>
-            <h5 className="tips__card__date">20 jan 2020</h5>
+          <div className="tips__card-wrapper">
+            <img
+              className="tips__card__img"
+              src={tipsImg3}
+              alt="Cooking activity"
+            />
+            <div className="tips__card-bottom-wrapper">
+              <p className="tips__card__p">
+                Make your cooking activity more fun with good setup
+              </p>
+              <p className="tips__card__date">20 jan 2020</p>
+            </div>
           </div>
-          <div className="tips___card-wrapper">
-            <img className="tips___card__img" src="" alt="" />
-            <p className="tips__card_p">
-              Make your cooking activity more fun with good setup
-            </p>
-            <h5 className="tips__card__date">20 jan 2020</h5>
+          <div className="tips__card-wrapper">
+            <img className="tips__card__img" src="" alt="" />
+            <div className="tips__card-bottom-wrapper">
+              <p className="tips__card__p">
+                Make your cooking activity more fun with good setup
+              </p>
+              <p className="tips__card__date">20 jan 2020</p>
+            </div>
           </div>
         </div>
-        <button type="button" className="tips__slider__swith-btn"></button>
-        <button type="button" className="tips__slider__swith-btn"></button>
+        <div className="tips__dots radio">
+          <span className="inspiration__dot"></span>
+          <span className="inspiration__dot current"></span>
+          <span className="inspiration__dot"></span>
+          <span className="inspiration__dot"></span>
+        </div>
+        <button type="button" className="tips__slider__switch-btn left">
+          <ArrowLeft />
+        </button>
+        <button type="button" className="tips__slider__switch-btn right">
+          <ArrowRight />
+        </button>
       </section>
       <section className="share section">
         <div className="share__header-wrapper">
