@@ -252,15 +252,6 @@ const Main = () => {
               <p className="tips__card__date">20 jan 2020</p>
             </div>
           </div>
-          <div className="tips__card-wrapper">
-            <img className="tips__card__img" src="" alt="" />
-            <div className="tips__card-bottom-wrapper">
-              <p className="tips__card__p">
-                Make your cooking activity more fun with good setup
-              </p>
-              <p className="tips__card__date">20 jan 2020</p>
-            </div>
-          </div>
         </div>
         <div className="tips__dots radio">
           <span className="inspiration__dot"></span>

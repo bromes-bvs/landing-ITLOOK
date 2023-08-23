@@ -12,6 +12,11 @@ const Header = () => {
   const roomsRef = useRef();
 
   const handleDrop = ref => {
+    let isSiblingOpen =
+      ref === productsRef ? roomsRef.current : productsRef.current;
+    if (isSiblingOpen.classList.contains('drop-active')) {
+      isSiblingOpen.classList.remove('drop-active');
+    }
     ref.current.classList.toggle('drop-active');
   };
 
