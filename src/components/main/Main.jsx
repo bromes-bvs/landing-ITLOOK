@@ -34,16 +34,6 @@ import { ReactComponent as ArrowLeftCircle } from '../../assets/logo/ArrowLeft.s
 import { ReactComponent as ArrowRightCircle } from '../../assets/logo/ArrowRight.svg';
 
 const Main = () => {
-  // const [index, setIndex] = useState('01');
-  // const first = useRef();
-  // const second = useRef();
-
-  // const toggleImage = i => {
-  //   setIndex(i);
-
-  //   first.current.classList.toggle('translate');
-  //   second.current.classList.toggle('translate');
-  // };
 
   return (
     <main>
