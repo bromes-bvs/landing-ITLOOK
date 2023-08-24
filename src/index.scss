@@ -97,18 +97,6 @@ button {
   cursor: pointer;
 }
 
-.content,
-.hero__img-wrapper,
-.hero__title,
-.about__title-wrapper,
-.smooth,
-.contactUs__img,
-.scroll-right,
-.scroll-left,
-.scroll-center {
-  will-change: transform;
-}
-
 .container {
   padding: 0 100px;
   max-width: 1440px;
@@ -218,7 +206,7 @@ button {
   }
 
   @media screen and (max-width: 767px) {
-    padding: 15px 15px;
+    padding: 18px 15px;
     background: linear-gradient(to right, $bcg-main-color 70%, $bcg-secondary-color 70%);
     width: 100%;
   }
@@ -232,8 +220,9 @@ button {
     }
 
     @media screen and (max-width: 767px) {
-      gap: 14px;
+      gap: 8px;
       flex-direction: column;
+      width: 100%;
     }
   }
 
@@ -279,6 +268,10 @@ button {
 
       @media screen and (max-width: 767px) {
         justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        bottom: -85px;
+        gap: unset;
       }
     }
 
@@ -290,6 +283,8 @@ button {
       font-family: Gilroy-M;
       font-size: $text-size;
       color: $main-text-color;
+
+      cursor: pointer;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         gap: 5px;
@@ -304,6 +299,11 @@ button {
 
     &__item {
       position: relative;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.67;
+      }
 
       &.drop-active .dropdown__list {
         opacity: 1;
@@ -316,6 +316,12 @@ button {
           height: 11px;
           align-self: flex-end;
         }
+      }
+    }
+
+    &__item.drop-active {
+      &:hover {
+        opacity: 1;
       }
     }
 
@@ -352,6 +358,7 @@ button {
         padding: 5px;
         backdrop-filter: none;
         background-color: #fcf8f3fa;
+        pointer-events: all;
       }
     }
 
@@ -375,6 +382,7 @@ button {
 
     @media screen and (max-width: 767px) {
       width: 100%;
+      margin-bottom: 30px;
     }
 
     & .search {
@@ -442,6 +450,7 @@ button {
       right: 15px;
       flex-direction: row;
       gap: 12px;
+      width: max-content;
     }
 
     &__cart {
@@ -452,6 +461,11 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         max-width: 18%;
       }
+
+      &:hover path,
+      &:hover circle {
+        stroke: $accent-color;
+      }
     }
 
     &__like {
@@ -459,6 +473,10 @@ button {
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         max-width: 18%;
+      }
+
+      &:hover path {
+        stroke: $accent-color;
       }
     }
   }
@@ -476,6 +494,15 @@ button {
       padding: 0;
       padding-top: 60px;
       background: linear-gradient(to right, $bcg-main-color 70%, $bcg-secondary-color 70%);
+    }
+
+    @media screen and (max-width: 767px) {
+      background: linear-gradient(to right, $bcg-main-color 70%, $bcg-secondary-color 70%);
+      padding-top: 20px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
     }
   }
 
@@ -498,6 +525,13 @@ button {
       left: 30px;
     }
 
+    @media screen and (max-width: 767px) {
+      max-width: calc(100% - 30px);
+      padding: 30px;
+      position: static;
+      margin: 0 auto;
+    }
+
     & button {
       height: 78px;
       text-align: center;
@@ -506,10 +540,22 @@ button {
       font-family: Gilroy-S;
       font-size: 20px;
       line-height: 150%;
+      transition: all 0.25s ease-in;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         height: 58px;
         font-size: 16px;
+      }
+
+      @media screen and (max-width: 767px) {
+        height: 38px;
+        font-size: 16px;
+        max-width: 230px;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        opacity: 0.7;
       }
     }
   }
@@ -523,6 +569,11 @@ button {
       margin-bottom: 12px;
       font-size: 28px;
     }
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
   }
 
   &__prescription {
@@ -533,6 +584,11 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-bottom: 28px;
       font-size: 16px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+      margin-bottom: 24px;
     }
   }
 
@@ -545,6 +601,10 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       gap: 22px;
     }
+
+    @media screen and (max-width: 767px) {
+      gap: 12px;
+    }
   }
 
   &__slider {
@@ -554,6 +614,11 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         max-width: 70%;
         transform: translateX(-62%);
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        transform: translateX(-91%);
       }
     }
 
@@ -574,6 +639,13 @@ button {
 
       @media screen and (min-width: 1280px) and (max-width: 1439px) {
         width: 43%;
+      }
+
+      @media screen and (max-width: 767px) {
+        top: unset;
+        bottom: -35px;
+        right: 2.6vw;
+        width: 82vw;
       }
 
       & div:nth-child(2) {
@@ -632,23 +704,47 @@ button {
       background-color: rgba(255, 255, 255, 0.9);
     }
 
+    @media screen and (max-width: 767px) {
+      gap: 10px;
+      padding: 8px;
+      bottom: 3vw;
+      left: 15.7vw;
+      max-height: 70px;
+      max-width: 200px;
+    }
+
     & div {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       max-width: 165px;
+
+      @media screen and (max-width: 767px) {
+        max-width: 120px;
+        position: relative;
+      }
     }
 
     &__h {
       font-family: Gilroy-S;
       font-size: 28px;
+
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 20px;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
       }
     }
 
     &__p {
       color: $third-text-color;
+
+      @media screen and (max-width: 767px) {
+        font-size: 11px;
+        line-height: 1;
+      }
     }
 
     &__cost {
@@ -660,11 +756,23 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 14px;
       }
+
+      @media screen and (max-width: 767px) {
+        font-size: 12px;
+        line-height: 1.1;
+      }
     }
 
     &__more {
       display: flex;
       align-items: flex-end;
+
+      @media screen and (max-width: 767px) {
+        position: absolute;
+        bottom: 2px;
+        right: 3px;
+        width: 20px;
+      }
     }
   }
 }
@@ -681,15 +789,36 @@ button {
     margin: 38px auto;
   }
 
+  @media screen and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    flex-wrap: wrap;
+    margin: 58px auto;
+    margin-bottom: 30px;
+  }
+
   &__card {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 767px) {
+      width: calc(50vw - 15px);
+    }
 
     &__logo {
       margin: 24px;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         margin-left: 48px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin: 0;
+        margin-right: 10px;
+        flex-shrink: 0;
+        width: 29px;
       }
     }
 
@@ -701,11 +830,20 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 20px;
       }
+
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+        line-height: 120%;
+      }
     }
 
     &__p {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 14px;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 11px;
       }
     }
   }
@@ -726,12 +864,21 @@ button {
     margin-bottom: 28px;
   }
 
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
   &__title {
     margin-bottom: 32px;
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-bottom: 24px;
       font-size: 28px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 24px;
     }
   }
 
@@ -744,6 +891,10 @@ button {
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       gap: 16px;
+    }
+
+    @media screen and (max-width: 767px) {
+      gap: 20px;
     }
   }
 
@@ -758,6 +909,12 @@ button {
       grid-gap: 16px;
     }
 
+    @media screen and (max-width: 767px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-gap: 15px;
+    }
+
     & .list__item {
       background-color: $card-bcg-color;
       position: relative;
@@ -767,7 +924,7 @@ button {
         transform: translateY(-100%);
 
         @media screen and (min-width: 768px) and (max-width: 1279px) {
-          transform: translateY(-60vw);
+          transform: translateY(-100%);
         }
       }
 
@@ -779,15 +936,26 @@ button {
 
         @media screen and (min-width: 768px) and (max-width: 1279px) {
           padding: 12px;
-          height: 100%;
           gap: 6px;
+        }
+
+        @media screen and (max-width: 767px) {
+          gap: 6px;
+          padding: 12px;
         }
 
         & div {
           display: flex;
           align-items: center;
           gap: 16px;
+
           @media screen and (min-width: 768px) and (max-width: 1279px) {
+            gap: 6px;
+            flex-direction: column;
+            align-items: start;
+          }
+
+          @media screen and (max-width: 767px) {
             gap: 6px;
             flex-direction: column;
             align-items: start;
@@ -806,6 +974,10 @@ button {
         @media screen and (min-width: 768px) and (max-width: 1279px) {
           font-size: 16px;
         }
+
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+        }
       }
 
       &__cost {
@@ -818,6 +990,10 @@ button {
         @media screen and (min-width: 1280px) and (max-width: 1439px) {
           font-size: 16px;
           line-height: 139%;
+        }
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
         }
 
         &--old {
@@ -833,6 +1009,11 @@ button {
           @media screen and (min-width: 1280px) and (max-width: 1439px) {
             font-size: 15px;
             line-height: 135%;
+          }
+
+          @media screen and (max-width: 767px) {
+            font-size: 10px;
+            line-height: 150%;
           }
         }
       }
@@ -860,6 +1041,14 @@ button {
           right: 15px;
         }
 
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+          width: 34px;
+          height: 34px;
+          top: 8px;
+          right: 8px;
+        }
+
         &--hidden {
           display: none;
         }
@@ -878,6 +1067,7 @@ button {
         justify-content: center;
         align-items: center;
         gap: 24px;
+        bottom: -100%;
         margin: 0;
         padding: 0 42px;
         width: 100%;
@@ -892,6 +1082,11 @@ button {
           gap: 18px;
         }
 
+        @media screen and (max-width: 767px) {
+          padding: 0 15px;
+          gap: 18px;
+        }
+
         &__btn {
           background-color: $white;
           height: auto;
@@ -900,6 +1095,10 @@ button {
 
           @media screen and (min-width: 768px) and (max-width: 1279px) {
             font-size: 16px;
+          }
+
+          @media screen and (max-width: 767px) {
+            font-size: 14px;
           }
 
           &:hover {
@@ -919,6 +1118,18 @@ button {
 
           @media screen and (min-width: 768px) and (max-width: 1279px) {
             gap: 6px;
+          }
+
+          @media screen and (max-width: 767px) {
+            gap: 3px;
+            font-size: 12px;
+          }
+
+          & svg {
+            @media screen and (max-width: 767px) {
+              width: 18px;
+              height: 18px;
+            }
           }
 
           &:hover {
@@ -960,6 +1171,10 @@ button {
       width: 188px;
     }
 
+    @media screen and (max-width: 767px) {
+      width: 200px;
+    }
+
     &:hover {
       background-color: $bcg-secondary-color;
     }
@@ -981,6 +1196,14 @@ button {
     margin-bottom: 28px;
   }
 
+  @media screen and (max-width: 767px) {
+    padding-top: 28px;
+    padding-bottom: 35px;
+    margin-bottom: 28px;
+    flex-direction: column;
+    gap: 28px;
+  }
+
   &__title-wrapper {
     display: flex;
     flex-direction: column;
@@ -992,6 +1215,11 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-right: 50px;
       max-width: 260px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 204px;
+      margin: 0 auto;
     }
   }
 
@@ -1009,6 +1237,15 @@ button {
     width: 176px;
     background-color: $accent-color;
     height: auto;
+    transition: all 0.4s ease-in-out;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__slider {
@@ -1027,6 +1264,10 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 20px;
       }
+
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
     }
 
     &__p {
@@ -1036,6 +1277,10 @@ button {
       color: $third-text-color;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 767px) {
         font-size: 14px;
       }
     }
@@ -1056,6 +1301,21 @@ button {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         width: 38px;
         height: 38px;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 34px;
+        height: 34px;
+        bottom: 35%;
+        top: unset;
+        right: 34px;
+        transform: unset;
+      }
+
+      & svg {
+        @media screen and (max-width: 767px) {
+          height: 13px;
+        }
       }
 
       &:hover {
@@ -1081,6 +1341,12 @@ button {
         right: -38px;
       }
 
+      @media screen and (max-width: 767px) {
+        width: 34px;
+        height: 34px;
+        right: -34px;
+      }
+
       & svg path {
         fill: $white;
       }
@@ -1104,10 +1370,20 @@ button {
         padding: 10px 22px;
       }
 
+      @media screen and (max-width: 767px) {
+        padding: 16px 22px;
+      }
+
       & div {
         flex-direction: column;
         gap: 8px;
       }
+    }
+  }
+
+  &__img {
+    @media screen and (max-width: 767px) {
+      width: calc(100vw - 30px);
     }
   }
 
@@ -1125,6 +1401,10 @@ button {
       left: 14.5%;
       gap: 16px;
     }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 }
 
@@ -1138,6 +1418,10 @@ button {
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-bottom: 34px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
   }
 
   &__title {
@@ -1165,27 +1449,77 @@ button {
     background-color: $white;
     transition: all 0.3s ease-in;
     filter: drop-shadow(0 7px 2mm rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease-in;
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       width: 34px;
       height: 34px;
     }
 
+    @media screen and (max-width: 767px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      box-shadow:
+        rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    }
+
+    & svg {
+      @media screen and (max-width: 767px) {
+        height: 13px;
+      }
+    }
+
     &.left {
       top: 50%;
-      left: 15px;
+      left: 77px;
       transform: translateY(-50%);
+
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        left: 15px;
+      }
+
+      @media screen and (max-width: 767px) {
+        top: 43%;
+        left: 5px;
+      }
     }
     &.right {
       top: 50%;
-      right: 15px;
+      right: 77px;
       transform: translateY(-50%);
+
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        right: 15px;
+      }
+
+      @media screen and (max-width: 767px) {
+        top: 43%;
+        right: 5px;
+      }
     }
   }
 
   &__card-wrapper {
     display: flex;
     flex-direction: column;
+
+    &:nth-child(1) {
+      @media screen and (max-width: 767px) {
+        width: calc(100vw - 30px);
+        display: flex;
+      }
+    }
+
+    & {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
 
     &.active {
       box-shadow:
@@ -1195,6 +1529,10 @@ button {
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         margin-bottom: 30px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 0px;
       }
     }
   }
@@ -1212,6 +1550,11 @@ button {
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       font-size: 14px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+      margin-bottom: 6px;
     }
   }
 
@@ -1254,6 +1597,10 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       font-size: 14px;
     }
+
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   &__content-wrapper {
@@ -1264,6 +1611,11 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-bottom: -290px;
       gap: 12px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: -310px;
+      gap: 10px;
     }
 
     transform: translateX(6%);
@@ -1279,12 +1631,21 @@ button {
       transform: scale(0.55) translateX(49%) translateY(-44%);
     }
 
+    @media screen and (max-width: 767px) {
+      gap: 10px;
+      transform: scale(0.55) translateX(34%) translateY(-49%);
+    }
+
     & div {
       display: flex;
       gap: 16px;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         gap: 12px;
+      }
+
+      @media screen and (max-width: 767px) {
+        gap: 10px;
       }
     }
 
@@ -1311,6 +1672,11 @@ button {
       transform: scale(0.55) translateX(-36%) translateY(-42%);
     }
 
+    @media screen and (max-width: 767px) {
+      gap: 10px;
+      transform: scale(0.55) translateX(-46.6%) translateY(-44%);
+    }
+
     & div:nth-child(1) {
       display: flex;
       align-items: center;
@@ -1323,6 +1689,10 @@ button {
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         gap: 12px;
+      }
+
+      @media screen and (max-width: 767px) {
+        gap: 10px;
       }
 
       & div {
@@ -1354,6 +1724,10 @@ button {
     padding: 60px 0 50px 0;
   }
 
+  @media screen and (max-width: 767px) {
+    padding: 50px 0 40px 0;
+  }
+
   &__content-wrapper {
     display: flex;
     gap: 80px;
@@ -1364,10 +1738,14 @@ button {
       justify-content: space-between;
     }
 
+    @media screen and (max-width: 767px) {
+      gap: 18px;
+      flex-direction: column;
+    }
+
     & .title {
       font-size: 24px;
       color: $black;
-      line-height: auto;
 
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         font-size: 18px;
@@ -1419,6 +1797,10 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       gap: 12px;
     }
+
+    @media screen and (max-width: 767px) {
+      gap: 6px;
+    }
   }
 
   &__menu__item a,
@@ -1432,6 +1814,10 @@ button {
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       font-size: 12px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
     }
 
     &:hover {
@@ -1460,6 +1846,35 @@ button {
 
   &__information__item a:hover {
     color: $accent-color;
+  }
+
+  &__account {
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      top: 37.6%;
+      right: 0;
+    }
+  }
+
+  &__social__list {
+    @media screen and (max-width: 767px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    & .footer__social__link {
+      @media screen and (max-width: 767px) {
+        gap: 4px;
+      }
+    }
+  }
+
+  &__social__title,
+  &__subscribe__title {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 10px;
+      text-align: center;
+    }
   }
 
   & .social__logo {
@@ -1498,6 +1913,10 @@ button {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       height: 38px;
     }
+
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
   }
 
   &__subscribe__input {
@@ -1531,9 +1950,19 @@ button {
   &__subscribe__btn {
     background-color: $accent-color;
     padding: 11px;
+    transition: 0.3s ease-in;
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       padding: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 46px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
     }
   }
 }
