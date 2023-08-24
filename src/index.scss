@@ -653,15 +653,29 @@ button {
         gap: 8px;
 
         & button {
-          width: 28px;
-          height: 28px;
+          width: 48px;
+          height: 48px;
           background-color: #f6ddcc;
           border-radius: 50%;
           transition: all 0.3s ease-in;
 
+          @media screen and (min-width: 768px) and (max-width: 1279px) {
+            width: 28px;
+            height: 28px;
+          }
+
+          @media screen and (max-width: 767px) {
+            width: 28px;
+            height: 28px;
+          }
+
           & svg {
             @media screen and (min-width: 768px) and (max-width: 1279px) {
               width: 16px;
+            }
+
+            @media screen and (max-width: 767px) {
+              width: 13px;
             }
           }
 
@@ -674,9 +688,19 @@ button {
         }
 
         & button:nth-child(2) {
-          width: 28px;
-          height: 28px;
+          width: 48px;
+          height: 48px;
           background-color: $accent-color;
+
+          @media screen and (min-width: 768px) and (max-width: 1279px) {
+            width: 28px;
+            height: 28px;
+          }
+
+          @media screen and (max-width: 767px) {
+            width: 28px;
+            height: 28px;
+          }
         }
       }
     }
